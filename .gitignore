@@ -1,0 +1,40 @@
+# =========================
+# Compiled C/C++ binaries
+# =========================
+*.out
+*.exe
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.dylib
+
+# Debug files
+*.dSYM/
+
+# Build folders
+build/
+bin/
+
+# VS Code
+.vscode/settings.json
+.vscode/launch.json
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+
+# Compiled binaries
+main
+functions
+loops
+a.out
+
+# Build folders
+build/
