@@ -86,5 +86,39 @@ printf("\n\n");
     parts, like the first loop was broken into 3 parts, the first was the digits, the second was spaces
     the third were digits in reverse, so the inner 3 loops were meant for these. */
 
+    int q, p, z;
+    scanf("%d\n%d", &p, &q);
+  	// Complete the code.
+    char *numbers[10] = {"zero", "one", "two", "three", "four",
+        "five", "six", "seven", "eight", "nine"};
+    
+    for (z=p;z<=q;z++){
+        if (z<=9){
+            printf("%s\n",numbers[z]);
+        }
+        else {
+            if (z%2==0){
+                printf("even\n");
+            }
+            else{
+                printf("odd\n");
+            }
+        }
+     }
+    
+    printf("\n\n");
+
+    // while loop, sum of digits of a number
+
+    int nn,qq,summ=0;
+    scanf("%d", &nn);
+    
+    while(nn!=0){
+        qq=nn%10;
+        summ=summ+qq;
+        nn=nn/10;
+    }
+    printf("\n%d\n ", summ);
+    
         return 0;
 }
