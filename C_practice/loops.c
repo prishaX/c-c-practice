@@ -27,7 +27,7 @@ printf("\n\n");
     for (a=1;a<=3;a++){
         for (b=1;b<=3;b++){
             for (c=1;c<=3;c++){
-                if(c!=b && c!=a && c!=a){
+                if(c!=b && c!=a && c!=b){
                     printf("\n%d", a*100+b*10+c);
                 }
             }
@@ -118,7 +118,41 @@ printf("\n\n");
         summ=summ+qq;
         nn=nn/10;
     }
-    printf("\n%d\n ", summ);
+    printf("sum of digits is %d\n ", summ);
+
+     printf("\n\n");
+
+//CAPITAL TO SMALL, SMALL TO CAPITAL
+
+    char ch;
+    printf("enter a character: ");
+    scanf(" %c", &ch);
+    if(ch>='a' && ch<='z'){
+    ch=ch-32;
+    }
+    else if(ch>='A' && ch<='Z'){
+    ch=ch+32;
+    }
+    printf("%c\n",ch);
+
+     printf("\n\n");
+
+//GCD of two numbers
+
+    int xx,yy,aa,bb;
+    printf("enter a and b: ");
+    scanf("%d %d", &aa,&bb);
+    xx=aa;
+    yy=bb;
+    while (aa!=bb){
+        if (aa>bb){
+            aa=aa-bb;
+        }
+        else {
+            bb=bb-aa;
+        }
+    }
+    printf("gcd of %d and %d is: %d",xx,yy,aa);
     
         return 0;
 }
