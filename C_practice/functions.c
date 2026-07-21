@@ -35,12 +35,18 @@ int power(int base,int exp){
 }
 
 int sum_of_digits(int a){
- int q,sum=0;
-     q = a%10;
-     sum=sum+q;
-     a=a/10;
+ int q=a%10;
+    if (a==0)
+        return 0;
     
- return sum;
+ return q + sum_of_digits(a/10);
+}
+
+int num_of_digits(int a){
+   int q=a/10;
+   if(a<10)
+   return 1;
+ return 1+num_of_digits(a/10) ;
 }
 
 int factorial(int n){
@@ -48,6 +54,7 @@ int factorial(int n){
         return 1;
    return n * factorial(n-1);
 }
+
 
 int main() {
 
@@ -67,10 +74,12 @@ int main() {
     printf(" %d raised to the power %d is %d\n",base,exp,p);
 
     int digit;
-    printf("enter a digit to calc sum of digits-");
+    printf("enter a digit to calc sum of digits and number of digits in it-");
     scanf("%d", &digit);
     int sumdigits= sum_of_digits(digit);
     printf(" sum of digits of %d is %d\n",digit,sumdigits);
+    int numdigits= num_of_digits(digit);
+    printf(" digits in %d is %d\n",digit,numdigits);
 
     int factdigit;
     printf("enter a digit to calc factorial-");
