@@ -52,6 +52,13 @@ double getsalary(){
     return salary;
 }
 
+//destructor 
+~Teacher(){
+cout << "Hello i delete everything \n";
+}
+//at the end of the main function our compiler notes that the t1 etc are no longer necessary so its automatically called and it deallocates its memory
+//to free 
+
 };
 
 int main (){
@@ -76,7 +83,6 @@ int main (){
  cout << t3.dept << endl;
  cout << t3.subject << endl;
  cout << t3.getsalary() << endl;
-
 
 return 0;
 }
