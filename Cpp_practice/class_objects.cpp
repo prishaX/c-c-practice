@@ -3,7 +3,7 @@
 using namespace std;
 
 //difference between struct and class in cpp is that in class everything is private by default and
-// instructure everything is public by default
+// in structure everything is public by default
 
 /* since all objects of a class have same member functions, so no different space allocated for them
 only space for member variables is allocated seperately  for each object*/
@@ -32,7 +32,8 @@ double getsalary(){
 
 int m = 20;
 
-//encapsulation is basically wrapping up of data and member functions in a single unit called class
+//encapsulation is basically wrapping up of data and member functions in a single unit called class restricting direct access to data to users,
+// functions and all protect the inputs and objects 
 
 class Account {
     //data hiding, using encapsulation
@@ -45,6 +46,22 @@ class Account {
     string username;
 
 };
+
+/*Namespaces- used to avoid naming conflicts, usually a container which differentiates between similar name identifiers(variables functions classes etc )*/
+
+namespace ns1{
+    void print(){
+        cout << "This is from ns1.\n";
+    }
+}
+
+
+namespace ns2{
+    void print(){
+        cout << "This is from ns2.\n";
+    }
+}
+
 
 /*Inside the class:
 ✅ Public function → Private function
@@ -68,6 +85,13 @@ int main (){
  /* "::" is a scope resolution operator 
  it means look or link in another scope, it links a class name with a member name
  like if any function or if any data type, if its in another class or in another scope so we can link it using this  */ 
+
+ns1::print();  //calling of the same print function in different namespace
+ns2::print();
+
+char str[20];
+cin.getline(str, sizeof(str)); //cin.getline(array_name, size); is the syntax to print a sentene or print strings with spaces.
+cout << str << endl; //sizeof(str) returns the actual size of the input as capacity is 20 and size depends on input
 
  return 0;
 }
