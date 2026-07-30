@@ -119,9 +119,9 @@ s1.setprice();
 s1.setprice();
 s1.displayprice();
 
-char str[20];
-cin.getline(str, sizeof(str)); //cin.getline(array_name, size); is the syntax to print a sentene or print strings with spaces.
-cout << str << endl; //sizeof(str) returns the actual size of the input as capacity is 20 and size depends on input
+/* char str[20];
+cin.getline(str, sizeof(str)); cin.getline(array_name, size); is the syntax to print a sentene or print strings with spaces.
+cout << str << endl; //sizeof(str) returns the actual size of the input as capacity is 20 and size depends on input */
 
  return 0;
 }
