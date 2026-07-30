@@ -61,6 +61,29 @@ namespace ns2{
     }
 }
 
+class Shopping {
+    int itemid[100];
+    int itemprice[100];
+    int counter;
+public: 
+    void initcounter(){counter=0;};
+    void setprice();
+    void displayprice();
+};
+
+void Shopping ::setprice(){
+    cout<<"Enter id of your" << counter + 1 << "item" <<endl;
+    cin>>itemid[counter];
+    cout<<"Enter price of your" << counter + 1 << "item"<<endl;
+    cin>>itemprice[counter];
+    counter++;
+}
+
+void Shopping ::displayprice(){  //scope resolution operator for functions is called like this
+     for(int i = 0; i < counter; i++){
+    cout<<"The price of" << i + 1 << "item is "<< itemprice[i] <<endl;
+    }
+}
 
 /*Inside the class:
 ✅ Public function → Private function
@@ -87,6 +110,14 @@ int main (){
 
 ns1::print();  //calling of the same print function in different namespace
 ns2::print();
+
+Shopping s1;
+s1.initcounter();
+s1.setprice();
+s1.setprice();
+s1.setprice();
+s1.setprice();
+s1.displayprice();
 
 char str[20];
 cin.getline(str, sizeof(str)); //cin.getline(array_name, size); is the syntax to print a sentene or print strings with spaces.
