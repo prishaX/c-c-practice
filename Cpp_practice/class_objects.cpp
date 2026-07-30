@@ -20,14 +20,13 @@ public:
 void changedept(string newdept){
     dept=newdept;
 }
-//function ke through salary public kr skte
+//function helps set salary so setter function
 void setsalary (int s){
     salary=s;
 }
-double getsalary(){
+double getsalary(){ //getter function
     return salary;
 }
-
 };
 
 int m = 20;
