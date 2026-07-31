@@ -69,12 +69,13 @@ public:
     void initcounter(){counter=0;};
     void setprice();
     void displayprice();
+    void totalprice();
 };
 
 void Shopping ::setprice(){
-    cout<<"Enter id of your" << counter + 1 << "item" <<endl;
+    cout<<"Enter id of your " << counter + 1 << " item" <<endl;
     cin>>itemid[counter];
-    cout<<"Enter price of your" << counter + 1 << "item"<<endl;
+    cout<<"Enter price of your " << counter + 1 << " item"<<endl;
     cin>>itemprice[counter];
     counter++;
 }
@@ -83,6 +84,14 @@ void Shopping ::displayprice(){  //scope resolution operator for functions is ca
      for(int i = 0; i < counter; i++){
     cout<<"The price of" << i + 1 << "item is "<< itemprice[i] <<endl;
     }
+}
+
+void Shopping ::totalprice(){
+    int sum=0;
+    for (int i=0; i<counter; i++){
+        sum=sum+itemprice[i];
+    }
+    cout<<"The total sum of the items is: "<<sum<<endl;
 }
 
 /*Inside the class:
@@ -115,9 +124,8 @@ Shopping s1;
 s1.initcounter();
 s1.setprice();
 s1.setprice();
-s1.setprice();
-s1.setprice();
 s1.displayprice();
+s1.totalprice();
 
 /* char str[20];
 cin.getline(str, sizeof(str)); cin.getline(array_name, size); is the syntax to print a sentene or print strings with spaces.
