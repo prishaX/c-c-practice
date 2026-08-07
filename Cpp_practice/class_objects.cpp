@@ -94,6 +94,22 @@ void Shopping ::totalprice(){
     cout<<"The total sum of the items is: "<<sum<<endl;
 }
 
+class Employee{
+    int id;
+    static int count;
+public:
+    void setdata(){
+        cin>>id;
+        count++;
+    }
+    void getdata(){
+        cout<<"The id of the "<<count<<" employee is: "<<id<<endl;
+    }
+};
+
+int Employee:: count; //default value of static members is zero. so as count is static its count is zero
+
+
 /*Inside the class:
 ✅ Public function → Private function
 ✅ Public function → Private data
@@ -130,6 +146,16 @@ s1.totalprice();
 /* char str[20];
 cin.getline(str, sizeof(str)); cin.getline(array_name, size); is the syntax to print a sentene or print strings with spaces.
 cout << str << endl; //sizeof(str) returns the actual size of the input as capacity is 20 and size depends on input */
+
+Employee harry,rohan,ritik;
+harry.setdata();
+harry.getdata(); 
+rohan.setdata();
+rohan.getdata();    
+ritik.setdata();
+ritik.getdata();
+                    //static is used here bcs if we dont use static the counter always starts from the initial value each time
+                    // a new object is created and function is called. static ensures the counter remains one throighout the members of the employee class
 
  return 0;
 }
