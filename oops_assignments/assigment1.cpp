@@ -90,7 +90,23 @@ namespace ns2{
     }
 }
 
+//question 7
+class Complex{
+    int a;
+    int b;
+public:
+    void number(int v1 , int v2){
+    a=v1;
+    b=v2;
+    cout<<"the complex number is: "<<a<<" + "<<b<<"i"<<endl;
+    }
+    void sumofcomplex(Complex n1, Complex n2){
+        a=n1.a+n2.a;
+        b=n1.b+n2.b;
+        cout<<"the sum of both complex is: "<<a<<" + "<<b<<"i"<<endl;
+    }
 
+};
 
 int main(){
 
@@ -159,6 +175,14 @@ int main(){
 //question8
 ns1::print();
 ns2::print();
- 
+
+//question 7 
+Complex num1;
+Complex num2;
+Complex sum;
+
+num1.number(1,2);
+num2.number(3,4);
+sum.sumofcomplex(num1,num2);
  return 0;
 }
