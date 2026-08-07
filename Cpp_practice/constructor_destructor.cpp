@@ -7,7 +7,7 @@ using namespace std;
 
 
 class Teacher{
-    // property attributes or member parameters
+    // property attributes or member parameters or data members
 private: 
     double salary;
 
@@ -55,7 +55,7 @@ double getsalary(){
 //destructor 
 ~Teacher(){
 cout << "Hello i delete everything \n";
-}
+} 
 //at the end of the main function our compiler notes that the t1 etc are no longer necessary so its automatically called and it deallocates its memory
 //to free 
 
