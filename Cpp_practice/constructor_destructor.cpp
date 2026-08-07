@@ -61,6 +61,19 @@ cout << "Hello i delete everything \n";
 
 };
 
+class Employee{
+    int id;
+    int salary;
+public:
+    void setid(){
+        cout<<"enter id of the employee"<<endl;
+        cin>>id;
+    }
+    void getid(){
+        cout<<"The id of the employee is: "<<id<<endl;
+    }
+};
+
 int main (){
     //dot function ke through u can assign values to your object
  Teacher t1; //constructor is called automatically
@@ -84,5 +97,14 @@ int main (){
  cout << t3.subject << endl;
  cout << t3.getsalary() << endl;
 
+Employee mars[10];       //array of objects created..especially used when there are alot of employees for one company etc type things
+for (int i=0;i<10;i++){
+    mars[i].setid();
+}
+for (int i=0;i<10;i++){
+    mars[i].getid();
+}
+
+ 
 return 0;
 }
