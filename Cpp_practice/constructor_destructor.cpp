@@ -72,7 +72,28 @@ public:
     void getid(){
         cout<<"The id of the employee is: "<<id<<endl;
     }
+}; 
+
+class Complex{
+    int a;
+    int b;
+public:
+    void number(int v1 , int v2){
+    a=v1;
+    b=v2;
+    }
+    friend Complex sumofcomplex(Complex n1, Complex n2);      //sends declaration to compilor that the function can access class private data. 
+    void printnumber(){
+        cout<<"the complex number is: "<<a<<" + "<<b<<"i"<<endl;
+    }
 };
+
+Complex sumofcomplex(Complex n1, Complex n2){        //function whose return type is complex and arguments are also complex
+    Complex o3;    //creating another object
+    o3.number((n1.a+n2.a),(n1.b+n2.b));              // These are friend functions. 
+      return o3;                                     // function cant access private data of the class so it needs a declaration from class to tell compilor to access data.
+}                                                    // this doesnt make the function a member function of the class. i.e not in scope.
+                                                     //  
 
 int main (){
     //dot function ke through u can assign values to your object
@@ -105,6 +126,16 @@ for (int i=0;i<10;i++){
     mars[i].getid();
 }
 
+Complex num1;
+Complex num2;
+Complex sum;
+
+num1.number(1,4);
+num1.printnumber();
+num2.number(5,8);
+num2.printnumber();
+sum = sumofcomplex(num1,num2);
+sum.printnumber();
  
 return 0;
 }
