@@ -93,7 +93,9 @@ Complex sumofcomplex(Complex n1, Complex n2){        //function whose return typ
     o3.number((n1.a+n2.a),(n1.b+n2.b));              // These are friend functions. 
       return o3;                                     // function cant access private data of the class so it needs a declaration from class to tell compilor to access data.
 }                                                    // this doesnt make the function a member function of the class. i.e not in scope.
-                                                     //  
+                                                     // so cant be called from objects of that class, i.e num1.sumofcomplex()==invalid
+                                                     // can be declared in public or private part of the class
+                                                    
 
 int main (){
     //dot function ke through u can assign values to your object
@@ -106,11 +108,17 @@ int main (){
  cout << t1.subject << endl;
  cout << t1.getsalary() << endl;
 
- Teacher t2("stuti", "doctory", "gynac", 150000);
+ Teacher t2("stuti", "doctory", "gynac", 150000);  //parameterized function implicit call
  cout << t2.name << endl;
- cout << t2.dept << endl;
+ cout << t2.dept << endl;                          
  cout << t2.subject << endl;
  cout << t2.getsalary() << endl;
+
+ Teacher t4 = Teacher("prisha", "coe", "engineering", 5000000); //explicit call of parameterized function
+ cout << t4.name << endl;
+ cout << t4.dept << endl;                          
+ cout << t4.subject << endl;
+ cout << t4.getsalary() << endl;
 
  Teacher t3(t2);
  cout << t3.name << endl;
