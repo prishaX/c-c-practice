@@ -52,6 +52,9 @@ double getsalary(){
     return salary;
 }
 
+/* an object can have as many constructors as possible but with different arguments, whenever a constructor or object is invoked in the main function
+the constructor with matching arguments is called. i.e this is called constructor overloading */
+
 //destructor 
 ~Teacher(){
 cout << "Hello i delete everything \n";
@@ -93,9 +96,26 @@ Complex sumofcomplex(Complex n1, Complex n2){        //function whose return typ
     o3.number((n1.a+n2.a),(n1.b+n2.b));              // These are friend functions. 
       return o3;                                     // function cant access private data of the class so it needs a declaration from class to tell compilor to access data.
 }                                                    // this doesnt make the function a member function of the class. i.e not in scope.
-                                                     // so cant be called from objects of that class, i.e num1.sumofcomplex()==invalid
+                                                      // so cant be called from objects of that class, i.e num1.sumofcomplex()==invalid
                                                      // can be declared in public or private part of the class
-                                                    
+class Bank{
+    int principal;
+    int years;
+    float interestRate;
+    float returnvalue;
+public:
+    Bankdeposit(){}
+    Bankdeposit(int p, int y, float r){//r can be a float value like 0.04
+    principal=p;
+    years=y;
+    interestRate=r;
+    returnvalue=principal;
+    for (int i=0;i<y;i++){
+        returnvalue=returnvalue*(1+r);
+    }
+    Bankdeposit(int p, i nt y, int r); //r can be an integer value
+}
+};
 
 int main (){
     //dot function ke through u can assign values to your object
@@ -110,10 +130,10 @@ int main (){
 
  Teacher t2("stuti", "doctory", "gynac", 150000);  //parameterized function implicit call
  cout << t2.name << endl;
- cout << t2.dept << endl;                          
+ cout << t2.dept << endl;
  cout << t2.subject << endl;
  cout << t2.getsalary() << endl;
-
+ 
  Teacher t4 = Teacher("prisha", "coe", "engineering", 5000000); //explicit call of parameterized function
  cout << t4.name << endl;
  cout << t4.dept << endl;                          
