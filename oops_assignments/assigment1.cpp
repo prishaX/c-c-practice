@@ -108,6 +108,30 @@ public:
 
 };
 
+//question 8 resource hub assigment
+class fine{
+    int days;
+    float fine;
+public:
+    void noofdays(){
+        cout<<"enter the number of days: ";
+        cin>>days;
+    }
+    void calcfine(){
+        if (days>=5){
+            fine=days*0.5;
+            cout<<"the fine is: "<<fine<<" rupees" <<endl;
+        }
+        if (days>=6 && days<=10){
+            fine = days*1;
+            cout<<"the fine is: "<<fine<<" rupees" <<endl;
+        }
+        if (days>=30){
+            cout<<"membership is cancelled"<<endl;
+        }
+    }
+};
+
 int main(){
 
 //question1
@@ -184,5 +208,11 @@ Complex sum;
 num1.number(1,2);
 num2.number(3,4);
 sum.sumofcomplex(num1,num2);
+
+//question 8 resource hub assigment
+fine f1;
+f1.noofdays();
+f1.calcfine();
+
  return 0;
 }

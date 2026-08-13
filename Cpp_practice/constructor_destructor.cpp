@@ -86,18 +86,30 @@ public:
     b=v2;
     }
     friend Complex sumofcomplex(Complex n1, Complex n2);      //sends declaration to compilor that the function can access class private data. 
+    friend Complex addref(Complex &n1, Complex &n2);
     void printnumber(){
         cout<<"the complex number is: "<<a<<" + "<<b<<"i"<<endl;
     }
 };
 
-Complex sumofcomplex(Complex n1, Complex n2){        //function whose return type is complex and arguments are also complex
-    Complex o3;    //creating another object
-    o3.number((n1.a+n2.a),(n1.b+n2.b));              // These are friend functions. 
-      return o3;                                     // function cant access private data of the class so it needs a declaration from class to tell compilor to access data.
-}                                                    // this doesnt make the function a member function of the class. i.e not in scope.
-                                                      // so cant be called from objects of that class, i.e num1.sumofcomplex()==invalid
-                                                     // can be declared in public or private part of the class
+    //function whose return type is complex and arguments are also complex
+    // These are friend functions. 
+    // function cant access private data of the class so it needs a declaration from class to tell compilor to access data
+    // this doesnt make the function a member function of the class. i.e not in scope.
+    // so cant be called from objects of that class, i.e num1.sumofcomplex()==invalid
+    // can be declared in public or private part of the class
+
+Complex sumofcomplex(Complex n1, Complex n2){          //function who returns an object and takes objects as arguments 
+    Complex o3;    //creating another object 
+    o3.number((n1.a+n2.a),(n1.b+n2.b));             
+      return o3;                                     
+}   
+
+Complex addref(Complex &n1,Complex &n2){
+    Complex o3;
+    o3.number((n1.a+n2.a),(n2.b+n2.b));
+    return o3;
+}
 class Bank{
     int principal;
     int years;
@@ -157,13 +169,16 @@ for (int i=0;i<10;i++){
 Complex num1;
 Complex num2;
 Complex sum;
+Complex sumref;
 
 num1.number(1,4);
 num1.printnumber();
 num2.number(5,8);
 num2.printnumber();
-sum = sumofcomplex(num1,num2);
-sum.printnumber();
+sum = sumofcomplex(num1,num2);  //called like this as we need to store the returned value in sum object, as the function returns an object
+sum.printnumber();              //this is passby value sum
+sumref=addref(num1,num2);       //this is pass by reference sum
+sumref.printnumber();            
  
 return 0;
 }

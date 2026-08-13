@@ -4,6 +4,7 @@ using namespace std;
 
 //base class
 class Employee{
+protected:  //protected members can be accessed by derived class but not by the object of the base class
     int id;
     float salary;
 public:
@@ -14,7 +15,7 @@ public:
     void getsalary(){
         cout<<salary<<"  "<<id<<endl;
     }
-    Employee
+    Employee(){}; //default constructor used because our derived class also needs employee details, so it calls the base class constructor to get the employee details and we havent defined a constructor it initialize those
 };
 
 //derived class
@@ -25,12 +26,14 @@ visibility mode = it means the way we want to inherit our class, if we inherit p
 our base class's public members become our derived class's private members, i.e private members of the base class are NEVER inheritted
 ##### by default our visibility mode is private.*/
 
-class Programmer : Employee{    //programmer is the derived class employee is the base class
+class Programmer : public Employee{    //programmer is the derived class employee is the base class
     public:
     int language_code = 9;
-public:
     Programmer(int inpid){
          id=inpid;
+    }
+    void getdata(){
+        cout<<id<<endl;
     }
 };
 
@@ -50,6 +53,7 @@ harry.getsalary();
 rohan.getsalary();
 
 Programmer skillf(1);
+skillf.getdata();
 
     return 0;
 }
