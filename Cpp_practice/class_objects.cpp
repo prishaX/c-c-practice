@@ -107,7 +107,7 @@ public:
     }
 };
 
-int Employee:: count; //default value of static members is zero. so as count is static its count is zero
+int Employee :: count; //default value of static members is zero. so as count is static its count is zero
 
 
 /*Inside the class:

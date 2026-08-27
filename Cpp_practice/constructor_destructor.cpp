@@ -5,6 +5,64 @@ using namespace std;
 /* constructor is a special function whose work is to initialize, it (non parameterized) is automatically
  at object creation, so memory allocation happens only when constructor called. it also has no return type */
 
+class test{
+    int *ptr;
+public: 
+    test();
+    test(int);
+    void display();
+}
+test::test(){  //non parameterized constructor
+    ptr=new int;
+    *ptr=100;
+}
+test::test(int x){  //parameterized constructor
+    ptr=new int;
+    *ptr=x;
+}
+test::display(){
+    cout << "the value of ptr is: " << *ptr << endl;
+}
+
+class example{
+    char *name;
+    int length;
+public:
+    example(char *);
+    void display();
+    example();  
+}
+
+example::example(){  //non parameterized constructor
+    length = 0;
+    name = new char[length + 1];
+}
+
+example::example(char *n){  //parameterized constructor
+    length=strlen(n);
+    name=new char[length+1];
+    strcpy(name,n);
+}
+
+void example::display(){
+    cout << "the name is: " << name << endl;
+}
+
+class ABC{
+    int a;
+    public:
+    ABC(int x){
+        a=x;
+    }
+    void display(){
+        cout << "the value of a is: " << a << endl;
+    }
+    ~ABC(){
+        cout << "Hello i delete everything \n";
+    }
+
+
+}
 
 class Teacher{
     // property attributes or member parameters or data members
@@ -180,5 +238,19 @@ sum.printnumber();              //this is passby value sum
 sumref=addref(num1,num2);       //this is pass by reference sum
 sumref.printnumber();            
  
+test t1;  //non parameterized constructor called automatically
+t1.display();
+test t2(200);  //parameterized constructor called automatically
+t2.display();
+
+char *a="Welcome to"; 
+example e1(a), e2("c++"), e3("world");  //parameterized constructor called automatically
+e1.display();
+e2.display();
+e3.display();
+
+ABC obj(10);  //parameterized constructor called automatically
+obj.display();
+
 return 0;
 }
