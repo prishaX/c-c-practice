@@ -11,7 +11,7 @@ public:
     test();
     test(int);
     void display();
-}
+};
 test::test(){  //non parameterized constructor
     ptr=new int;
     *ptr=100;
@@ -20,7 +20,7 @@ test::test(int x){  //parameterized constructor
     ptr=new int;
     *ptr=x;
 }
-test::display(){
+void test::display(){
     cout << "the value of ptr is: " << *ptr << endl;
 }
 
@@ -31,7 +31,7 @@ public:
     example(char *);
     void display();
     example();  
-}
+};
 
 example::example(){  //non parameterized constructor
     length = 0;
@@ -62,7 +62,7 @@ class ABC{
     }
 
 
-}
+};
 
 class Teacher{
     // property attributes or member parameters or data members
@@ -183,7 +183,7 @@ public:
     for (int i=0;i<y;i++){
         returnvalue=returnvalue*(1+r);
     }
-    Bankdeposit(int p, i nt y, int r); //r can be an integer value
+    Bankdeposit(int p, int y, int r); //r can be an integer value
 }
 };
 
@@ -238,10 +238,10 @@ sum.printnumber();              //this is passby value sum
 sumref=addref(num1,num2);       //this is pass by reference sum
 sumref.printnumber();            
  
-test t1;  //non parameterized constructor called automatically
-t1.display();
-test t2(200);  //parameterized constructor called automatically
-t2.display();
+test test1;  //non parameterized constructor called automatically
+test1.display();
+test test2(200);  //parameterized constructor called automatically
+test2.display();
 
 char *a="Welcome to"; 
 example e1(a), e2("c++"), e3("world");  //parameterized constructor called automatically
