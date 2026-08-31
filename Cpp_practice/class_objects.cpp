@@ -116,7 +116,28 @@ int Employee :: count; //default value of static members is zero. so as count is
 ✅ Private function → Private data
 ✅ Private function → Public function (also allowed) */
 
+class Student(){
+    int marks;
+    int roll;
+public:
+    Student(){
+        marks=0;
+        roll=0;
+    }
+    Student(int m, int r){
+        marks=m;
+        roll=r;
+    }
+    void show(){
+        cout<<"The marks are: "<<marks<<endl;
+        cout<<"The roll number is: "<<roll<<endl;
+    }
+}
+
 int main (){
+
+ Student *s1 = new Student[2]{{3,5},{7,8}}; //dynamic memory allocation of object s1 of class student
+ delete [] s1; //deleting the dynamically allocated memory for object s1
  int m = 10;
     //dot function ke through u can assign values to your object
  Teacher t1;
@@ -132,6 +153,16 @@ int main (){
  /* "::" is a scope resolution operator 
  it means look or link in another scope, it links a class name with a member name
  like if any function or if any data type, if its in another class or in another scope so we can link it using this  */ 
+
+ Teacher *t = new Teacher[2]; //dynamic memory allocation of object t2 of class teacher
+ t[0].name="prisha";
+ t[0].dept="cs";
+ t[1].name="rohan";
+ t[1].dept="it";
+ cout<<t[0].name<<endl;
+ cout<<t[1].name<<endl;
+
+delete [] t; //deleting the dynamically allocated memory for object t
 
 ns1::print();  //calling of the same print function in different namespace
 ns2::print();

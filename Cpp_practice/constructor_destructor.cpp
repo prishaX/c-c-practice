@@ -216,6 +216,10 @@ int main (){
  cout << t3.subject << endl;
  cout << t3.getsalary() << endl;
 
+ Teacher t5;
+ t5=t2;             //in copy constructor, conpy constructor is called but here assignment is used and on creation of t5 only default constructor is called
+                    // and then assignment operator is used to copy the values of t2 to t5, so copy constructor is not called here.
+
 Employee mars[10];       //array of objects created..especially used when there are alot of employees for one company etc type things
 for (int i=0;i<10;i++){
     mars[i].setid();
