@@ -156,6 +156,14 @@ ritik.setdata();
 ritik.getdata();
                     //static is used here bcs if we dont use static the counter always starts from the initial value each time
                     // a new object is created and function is called. static ensures the counter remains one throighout the members of the employee class
+int A[2]; //static memory allocation is done at compile time and dynamic memory allocation is done at run time
+int B[2]={1,2}; //static memory allocation and initlization is done at compile time
+int  *ptr=new int[2](); //dynamic memory allocation is done at run time
+int *ptr1=new int[2]{1,2}; //dynamic memory allocation and initialization is done at run time
+int *ptr1=new int[2]{1}; //rest elements will be initialized to zero, so ptr1[0]=1, ptr1[1]=0
+int n;
+cin>>n;
+int *newptr=new int[n]; //dynamic memory allocation of n size array at run time 
 
  return 0;
 }
