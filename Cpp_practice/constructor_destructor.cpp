@@ -167,24 +167,6 @@ Complex addref(Complex &n1,Complex &n2){
     Complex o3;
     o3.number((n1.a+n2.a),(n2.b+n2.b));
     return o3;
-}
-class Bank{
-    int principal;
-    int years;
-    float interestRate;
-    float returnvalue;
-public:
-    Bankdeposit(){}
-    Bankdeposit(int p, int y, float r){//r can be a float value like 0.04
-    principal=p;
-    years=y;
-    interestRate=r;
-    returnvalue=principal;
-    for (int i=0;i<y;i++){
-        returnvalue=returnvalue*(1+r);
-    }
-    Bankdeposit(int p, int y, int r); //r can be an integer value
-}
 };
 
 int main (){

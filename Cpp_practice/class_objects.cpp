@@ -116,7 +116,7 @@ int Employee :: count; //default value of static members is zero. so as count is
 ✅ Private function → Private data
 ✅ Private function → Public function (also allowed) */
 
-class Student(){
+class Student{
     int marks;
     int roll;
 public:
@@ -132,12 +132,13 @@ public:
         cout<<"The marks are: "<<marks<<endl;
         cout<<"The roll number is: "<<roll<<endl;
     }
-}
+};
 
 int main (){
 
- Student *s1 = new Student[2]{{3,5},{7,8}}; //dynamic memory allocation of object s1 of class student
- delete [] s1; //deleting the dynamically allocated memory for object s1
+ Student *s = new Student[2]{{3,5},{7,8}}; //dynamic memory allocation of object s1 of class student
+ delete [] s; //deleting the dynamically allocated memory for object s1
+ 
  int m = 10;
     //dot function ke through u can assign values to your object
  Teacher t1;
@@ -187,6 +188,7 @@ ritik.setdata();
 ritik.getdata();
                     //static is used here bcs if we dont use static the counter always starts from the initial value each time
                     // a new object is created and function is called. static ensures the counter remains one throighout the members of the employee class
+
 int A[2]; //static memory allocation is done at compile time and dynamic memory allocation is done at run time
 int B[2]={1,2}; //static memory allocation and initlization is done at compile time
 int  *ptr=new int[2](); //dynamic memory allocation is done at run time
