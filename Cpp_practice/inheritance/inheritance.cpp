@@ -4,7 +4,7 @@ using namespace std;
 
 //base class
 class Employee{
-protected:  //protected members can be accessed by derived class but not by the object of the base class
+protected:  //protected members can be accessed by derived class but not by the object of the base class i.e only in child class
     int id;
     float salary;
 public:
@@ -19,9 +19,9 @@ public:
 };
 
 //derived class
-/*class {{derived-class_name}} : {{visibility mode}} {{base-class_name}}{
-class members/methods etc are written here
-}
+/*syntax---    class {derived-class_name} : {visibility mode} {base-class_name} {
+                    class members/methods etc are written here
+                }
 visibility mode = it means the way we want to inherit our class, if we inherit publically, our base class public members become public, and if we inherit privately,
 our base class's public members become our derived class's private members, i.e private members of the base class are NEVER inheritted
 ##### by default our visibility mode is private.*/
@@ -29,13 +29,13 @@ our base class's public members become our derived class's private members, i.e 
 class Programmer : public Employee{    //programmer is the derived class employee is the base class
     public:
     int language_code = 9;
-    Programmer(int inpid){
-         id=inpid;
-    }
+    Programmer(int inpid) : Employee(inpid) {} //calling the base class constructor to initialize the base class members in the inherited class, we can also use the default constructor of the base class to initialize the base class members in the derived class
     void getdata(){
         cout<<id<<endl;
     }
 };
+
+
 
 
 int main(){
