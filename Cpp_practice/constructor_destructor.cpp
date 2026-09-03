@@ -169,6 +169,30 @@ Complex addref(Complex &n1,Complex &n2){
     return o3;
 };
 
+//a class can also be made a friend of another class, so that it can access the private data of that class.
+//all data members of the class are private by default, so if we want to access them from another class we can make that class a friend of this class
+
+class twoValues{
+
+    int a;
+    int b;
+public:
+    twoValues(int i, int j){
+        a=i;
+        b=j;
+    }
+    friend class Min;
+};
+class Min{
+    public:
+    int min(twoValues x);
+
+    int min(twoValues x){
+    return (x.a<x.b)?x.a:x.b;
+    }
+    
+};
+
 int main (){
     //dot function ke through u can assign values to your object
  Teacher t1; //constructor is called automatically
@@ -237,6 +261,10 @@ e3.display();
 
 ABC obj(10);  //parameterized constructor called automatically
 obj.display();
+
+twoValues obj1(10,20);
+Min obj2;
+cout << "the minimum value is: " << obj2.min(obj1) << endl;
 
 return 0;
 }
