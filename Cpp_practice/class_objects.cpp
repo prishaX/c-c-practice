@@ -138,11 +138,11 @@ int main (){
 
  Student *s = new Student[2]{{3,5},{7,8}}; //dynamic memory allocation of object s1 of class student
  delete [] s; //deleting the dynamically allocated memory for object s1
- Student *s1 = new Student; //dynamic memory allocation of object s1 of class student using default constructor
- *s1 = Student(10,20); //initializing the object s1 using parameterized constructor
- s1->show(); //accessing the member function of the object s1 using pointer 
- 
- delete s1; //deleting the dynamically allocated memory for object s1
+ Student *student1 = new Student; //dynamic memory allocation of object s1 of class student using default constructor
+ *student1 = Student(10,20); //initializing the object s1 using parameterized constructor
+ student1->show(); //accessing the member function of the object s1 using pointer 
+
+ delete student1; //deleting the dynamically allocated memory for object s1
 
  int m = 10;
     //dot function ke through u can assign values to your object
