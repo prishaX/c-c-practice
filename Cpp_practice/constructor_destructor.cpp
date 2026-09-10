@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <cstring>
 using namespace std;
 
 /* constructor is a special function whose work is to initialize, it (non parameterized) is automatically

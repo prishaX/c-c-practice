@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <cstring>
 using namespace std;
 
 //difference between struct and class in cpp is that in class everything is private by default and
@@ -109,6 +109,25 @@ public:
 
 int Employee :: count; //default value of static members is zero. so as count is static its count is zero
 
+class Friend{
+    string name;
+    static int count;
+public:
+    void setdata(){
+        cout<<"Enter the name of the friend: "<<endl;
+        getline(cin, name);   
+    }  
+    void getdata(){
+        cout<<"The name of the "<<count<<" friend is: "<<name<<endl;
+        count++;
+    }   
+    static void showcount(){
+        cout<<"static count: "<<count<<endl;   
+    }
+};
+
+int Friend :: count=1; //default value of static members is zero. so as count is static its count is zero
+
 
 /*Inside the class:
 ✅ Public function → Private function
@@ -167,6 +186,11 @@ int main (){
  t[1].dept="it";
  cout<<t[0].name<<endl;
  cout<<t[1].name<<endl;
+ t[0].setsalary(25000); //calling the member function of the object t[0] using dot operator
+ t[1].setsalary(30000); //calling the member function of the object t[1] using dot operator
+ cout<<t[0].getsalary()<<endl; //calling the member function of the object t[0] using dot operator
+ cout<<t[1].getsalary()<<endl; //
+
 
 delete [] t; //deleting the dynamically allocated memory for object t
 
@@ -198,10 +222,19 @@ int A[2]; //static memory allocation is done at compile time and dynamic memory 
 int B[2]={1,2}; //static memory allocation and initlization is done at compile time
 int  *ptr=new int[2](); //dynamic memory allocation is done at run time
 int *ptr1=new int[2]{1,2}; //dynamic memory allocation and initialization is done at run time
-int *ptr1=new int[2]{1}; //rest elements will be initialized to zero, so ptr1[0]=1, ptr1[1]=0
+int *ptr2=new int[2]{1}; //rest elements will be initialized to zero, so ptr1[0]=1, ptr1[1]=0
 int n;
 cin>>n;
 int *newptr=new int[n]; //dynamic memory allocation of n size array at run time 
+
+Friend *f = new Friend[3];
+for(int i=0;i<3;i++){
+    f[i].setdata();
+    f[i].getdata();
+}
+Friend::showcount(); //static function can be called using class name and scope resolution operator
+
+delete [] f; //deleting the dynamically allocated memory for object f
 
  return 0;
 }
