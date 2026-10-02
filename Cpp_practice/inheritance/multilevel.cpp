@@ -8,35 +8,68 @@
 #include <string>
 using namespace std;
 
-//Parent class
-class Animal {
-protected:
-    string name;
-public:
-    Animal(string _name) : name(_name) {}
-};
-
-//Intermediate derived class
-class Mammal : public Animal {
-    protected:
-    int numlegs;
-public:
-    Mammal(string _name, int _numlegs) : Animal(_name){
-        numlegs = _numlegs;
+class base{
+    public: 
+    void display(){
+        cout<<"Base class A"<<endl;
     }
 };
 
-//Derived class
-class Dog : public Mammal {
+class derived: public base{
     public:
-    Dog(string _name, int _numlegs) : Mammal(_name, _numlegs) {}
+    void display2(){
+        cout<<"subbase or derived class 1 b"<<endl;
+    }
+};
+
+class derived2 : public derived{
+    public: 
+    void display3(){
+        cout<<"derived class 2 or C"<<endl;
+    }
+};
+
+class Animal{
+    protected: 
+    string name;
+    public: 
+    Animal(string n) : name(n){}
+    void Eat() {
+        cout << name << " is eating." << endl;
+    }
+};
+
+class Mammal: public Animal{
+    protected: 
+    int numlegs;
+    public: 
+    Mammal(string n,int numlegs): Animal(n){
+        this->numlegs=numlegs;
+    }
+    void Walk() {
+        cout << name << " is walking on " << numlegs << " legs." << endl;
+    }
+};
+
+class Dog: public Mammal{
+    public:
+    Dog(string n,int numlegs): Mammal(n,numlegs){}
     void Bark() {
-        cout << "Woof! Woof!" << endl;
-    }   
+        cout << name << " is barking." << endl;
+    }
 };
 
 int main(){
-    Dog mydog("Buddy", 4);
-    mydog.Bark();   // Inherited from Dog class 
+
+    derived2 d;
+    d.display();
+    d.display2();
+    d.display3();
+
+    Dog dog1("Tuffy",4);
+    dog1.Eat();
+    dog1.Walk();
+    dog1.Bark();
+
     return 0;
 }

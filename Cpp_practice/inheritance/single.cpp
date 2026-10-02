@@ -53,14 +53,37 @@ class Child: public Parent {
 //first constructor of parent is called nd then child constructor 
 // destructor of child is called first nd then destructor of parent is called
 
+class Shape{
+    protected: 
+    int width;
+    int height;
+    public:
+    void setwidth(int w){
+        width=w;
+    }
+    void setheight(int h){
+        height=h;
+    }
+};
+class Rectangle: public Shape{
+    public:
+    int getarea(){
+        return width*height;
+    }
+};
+
 int main(){
 
     Dog dog("Buddy");
     dog.Eat();   // Inherited from Animal class
     dog.sleep(); // Inherited from Animal class
     dog.Bark();  // Specific to Dog class
-    Parent p;
     Child c;
+
+    Rectangle rect;
+    rect.setwidth(5);
+    rect.setheight(10);
+    cout << "Area of rectangle: " << rect.getarea() << endl;
 
     return 0;
 }
