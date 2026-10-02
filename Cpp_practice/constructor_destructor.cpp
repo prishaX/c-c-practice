@@ -25,10 +25,10 @@ void test::display(){
 }
 
 class example{
-    char *name;
+    string name;
     int length;
 public:
-    example(char *);
+    example(string n);
     void display();
     example();  
 };
@@ -38,10 +38,10 @@ example::example(){  //non parameterized constructor
     name = new char[length + 1];
 }
 
-example::example(char *n){  //parameterized constructor
-    length=strlen(n);
+example::example(string n){  //parameterized constructor
+    length=n.length();
     name=new char[length+1];
-    strcpy(name,n);
+    name=n;
 }
 
 void example::display(){
@@ -185,8 +185,6 @@ public:
 };
 class Min{
     public:
-    int min(twoValues x);
-
     int min(twoValues x){
     return (x.a<x.b)?x.a:x.b;
     }
@@ -253,7 +251,7 @@ test1.display();
 test test2(200);  //parameterized constructor called automatically
 test2.display();
 
-char *a="Welcome to"; 
+string a="Welcome to"; 
 example e1(a), e2("c++"), e3("world");  //parameterized constructor called automatically
 e1.display();
 e2.display();
