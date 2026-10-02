@@ -9,6 +9,10 @@ class base1{
     void showx(){
         cout<<"x: "<<x<<endl;
     }
+    base1()
+        { cout << "Constructing base1\n"; }
+    ~base1()
+        { cout << "Destructing base1\n"; }
 };
 
 class base2{
@@ -18,9 +22,14 @@ class base2{
     void showy(){
         cout<<"y: "<<y<<endl;
     }
+    base2()
+        { cout << "Constructing base2\n"; }
+    ~base2()
+        { cout << "Destructing base2\n"; }
+    
 };
 
-class derived: public base1,public base2 {
+class derived: public base1,public base2{
     public: 
     void set(int i,int j){
         x=i;
@@ -100,7 +109,7 @@ class Rectangle : public Shape, public PaintCost{
 
 int main(){
 
-    derived d;
+    derived d; //since constructor calling is from left to right...base1 calls first then base2 as written while inheriting classes (line 32)
     d.set(5,10); //from derived class
     d.showx(); //from base1 class
     d.showy(); //from base2 class

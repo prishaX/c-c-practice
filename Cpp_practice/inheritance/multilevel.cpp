@@ -10,8 +10,14 @@ using namespace std;
 
 class base{
     public: 
+    base(){
+        cout << "Constructing base\n";
+    }
     void display(){
         cout<<"Base class A"<<endl;
+    }
+    ~base(){ 
+        cout << "Destructing base\n"; 
     }
 };
 
@@ -20,6 +26,11 @@ class derived: public base{
     void display2(){
         cout<<"subbase or derived class 1 b"<<endl;
     }
+    derived(){
+         cout << "Constructing derived1\n"; }
+    ~derived()
+        { cout << "Destructing derived1\n"; }
+
 };
 
 class derived2 : public derived{
@@ -27,6 +38,10 @@ class derived2 : public derived{
     void display3(){
         cout<<"derived class 2 or C"<<endl;
     }
+    derived2()
+        { cout << "Constructing derived2\n"; }
+    ~derived2()
+        { cout << "Destructing derived2\n"; }
 };
 
 class Animal{
