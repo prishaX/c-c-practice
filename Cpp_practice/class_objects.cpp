@@ -160,8 +160,14 @@ int main (){
  Student *student1 = new Student; //dynamic memory allocation of object s1 of class student using default constructor
  *student1 = Student(10,20); //initializing the object s1 using parameterized constructor
  student1->show(); //accessing the member function of the object s1 using pointer 
+
  s->show(); //accessing the member function of the object s[0] using pointer
- s(1).show(); //accessing the member function of the object s[1] using pointer
+ //OR
+ s[0].show(); //accessing the member function of the object s[0] using pointer
+ s[1].show(); //accessing the member function of the object s[1] using pointer
+ //OR 
+ (s+1)->show(); //accessing the member function of the object s[1] using pointer
+
 
  delete student1; //deleting the dynamically allocated memory for object s1
  delete[] s; //deleting the dynamically allocated memory for object s
