@@ -89,6 +89,12 @@ Teacher (string name, string dept, string subject, double salary) {
     this->salary=salary;
 }
 
+//since "this" stores the address of the object calling that function...if we return *this...this returns the address of the calling function if the return type is class_name& i.e its retunrning the reference of the original object
+// but if the return type is class_name only then its returning a copy of the original objects data 
+//the difference lies in what we do with it...if i return a reference into another variable/object where im recieving it as a reference only.. it becomes another reference to the original object
+//otherwise its just a copy of the original object..shallow nd deep depend on the constructors.
+
+
 //copy constructor
 Teacher(Teacher &orgObj){   //here object is passed by reference, so the changes made in this constructor will also change the original object
     cout << "Hello im copy constructor \n";
