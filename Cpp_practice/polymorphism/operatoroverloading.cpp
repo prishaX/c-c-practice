@@ -29,6 +29,33 @@ class Distance{
 
 };
 
+class Time{
+    int hrs;
+    int mins;
+    int secs;
+    public:
+    void setval(int h,int m,int s){
+        hrs=h;
+        mins=m;
+        secs=s;
+    }
+    void operator+(Time t){
+        hrs= this->hrs+t.hrs;
+        mins=this->mins+t.mins;
+        secs=this->secs+t.secs;
+        if(secs>=60){
+            mins++;
+            secs=secs-60;
+        }
+    }
+    void displaytime(){
+        cout<<"hrs: "<<hrs<<endl;
+        cout<<"mins: "<<mins<<endl;
+        cout<<"secs: "<<secs<<endl;
+    }
+
+};
+
 // scope resolution, conditional, sizeof and class member access operators cant be overloaded
 // other can be overloaded and unary operators remain unary and binary remain binary 
 // not associativity harmed and no precedence harmed for all....rule of operator overlading
@@ -49,5 +76,12 @@ int main(){
     d1.display();
     d2.display();
     d4.display();
+
+    Time t1,t2;
+    t1.setval(2,12,33);
+    t2.setval(3,12,30);
+    t1+t2;
+    t1.displaytime();
+
     return 0;
 }
