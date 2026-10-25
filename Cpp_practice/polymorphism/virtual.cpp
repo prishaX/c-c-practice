@@ -30,7 +30,9 @@ public:
 // The resolving of a function call is done at runtime
 
 // They are always defined in the base class and overridden in a derived class. 
-// 
+
+// When a virtual function is inherited, its virtual nature is also inherited. This means that when a derived class that has inherited a virtual function is itself used as a base class for
+// another derived class, the virtual function can still be overridden. like in multi level a is base b is inherited from a and c is inherited from b..if a func is virtual in a so its virtual for c asw as b
 
 class Dog : public Animal {
 public:
