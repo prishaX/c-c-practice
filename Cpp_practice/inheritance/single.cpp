@@ -78,6 +78,7 @@ int main(){
     dog.Eat();   // Inherited from Animal class
     dog.sleep(); // Inherited from Animal class
     dog.Bark();  // Specific to Dog class
+    
     Child c;
 
     Rectangle rect;

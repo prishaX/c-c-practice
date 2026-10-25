@@ -39,6 +39,7 @@ int main(){
     cin>>distance;
     Distance d=distance;
     //assignment (=) implicit conversion from int to Distance...i.e distance is sent to parameterized constructor i.e initialization is happening. if it were Distance d; d=5; then first the object has been initialized then its assigned.
+    //that will also be type conversiopn but we will need a default constructor..if only default exists then its an error as no bridge to convert int to class.
     d.display();
 //BASIC TO USER DEFINED BY OVERLOADING OPERATORS
     Distance d1; //default calling 

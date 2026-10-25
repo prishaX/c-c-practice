@@ -18,16 +18,18 @@ void display(int arr[], int size) {
 
 void insert(int arr[], int pos, int val, int size){
  int a[size+1];
- for (int i = 0; i < size; i++) {
-         a[i]=arr[i];
+ // Copy elements up to the insertion position
+    for (int i = 0; i < pos; i++) {
+        a[i] = arr[i];
     }
-    for (int i = size; i > pos; i++) {
-       a[i]=a[i-1];
+
+    // Place the new value at 'pos'
+    a[pos] = val;
+
+    // Copy remaining elements, shifting them one position to the right
+    for (int i = pos; i < size; i++) {
+        a[i + 1] = arr[i];
     }
-    a[pos]=val;
-    for (int i = 0; i <= size; i++) {
-        cout << a[i] << " ";
-}
 }
 
 void del(int arr[], int pos, int size){
